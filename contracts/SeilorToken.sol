@@ -10,6 +10,8 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
 contract SeilorToken is ERC20, ERC20Burnable, Pausable, AccessControl {
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
+    // max supply
+    uint256 public constant MAX_SUPPLY = 1_000_000_000 * 10 ** 18;
 
     constructor() ERC20("SeilorToken", "SEILOR") {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
@@ -26,6 +28,8 @@ contract SeilorToken is ERC20, ERC20Burnable, Pausable, AccessControl {
     }
 
     function mint(address to, uint256 amount) public onlyRole(MINTER_ROLE) {
+        // check max supply
+        require(totalSupply() + amount <= MAX_SUPPLY, "SeilorToken: max supply");
         _mint(to, amount);
     }
 

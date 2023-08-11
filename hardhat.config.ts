@@ -1,6 +1,8 @@
 import * as dotenv from "dotenv";
 import {HardhatUserConfig} from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+// hardhat.config.ts
+import '@openzeppelin/hardhat-upgrades';
 
 dotenv.config();
 
@@ -30,7 +32,7 @@ const config: HardhatUserConfig = {
                 network: "bsc",
                 chainId: 56,
                 urls: {
-                    apiURL: "https://api.bscscan.com/",
+                    apiURL: "https://api.bscscan.com/api/",
                     browserURL: "https://bscscan.com/"
                 }
             },
