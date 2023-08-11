@@ -14,7 +14,7 @@ const config: HardhatUserConfig = {
     },
     networks: {
         bsc: {
-            url: "https://bsc-dataseed.binance.org/",
+            url: "https://bsc.publicnode.com",
             accounts: [process.env.PRIVATE_KEY || ''],
         },
         bsc_testnet: {

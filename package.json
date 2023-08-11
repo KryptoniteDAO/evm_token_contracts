@@ -10,7 +10,7 @@
     "deploy-bsc-testnet": "npx hardhat run scripts/deploy.ts --network bsc_testnet",
     "verify-bsc-testnet-contract": "npx hardhat verify 0x54982d82b27f0A80B141b54Ff7215388B384CfEF --network bsc_testnet",
     "deploy-bsc-main": "npx hardhat run scripts/deploy.ts --network bsc",
-    "verify-bsc-main-contract": "npx hardhat verify 0x54982d82b27f0A80B141b54Ff7215388B384CfEF --network bsc"
+    "verify-bsc-main-contract": "npx hardhat verify 0xE29142E14E52bdFBb8108076f66f49661F10EC10 --network bsc"
   },
   "author": "",
   "license": "MIT",
