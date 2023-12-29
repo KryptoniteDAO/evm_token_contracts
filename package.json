@@ -7,10 +7,15 @@
     "clean": "npx hardhat clean",
     "compile": "npx hardhat compile",
     "deploy-local": "npx hardhat run scripts/deploy.ts",
+    "deploy-local-dev": "npx hardhat run scripts/deploy_dev.ts",
     "deploy-bsc-testnet": "npx hardhat run scripts/deploy.ts --network bsc_testnet",
-    "verify-bsc-testnet-contract": "npx hardhat verify 0x54982d82b27f0A80B141b54Ff7215388B384CfEF --network bsc_testnet",
+    "deploy-bsc-testnet-test": "npx hardhat run scripts/deploy-test.ts --network bsc_testnet",
+    "deploy-bsc-main-dev": "npx hardhat run scripts/deploy_dev.ts --network bsc",
+    "verify-bsc-testnet-contract": "npx hardhat verify --network bsc_testnet 0x38fC7ea8987aBeb1B178C6e23a0722E1dD065Cc5 0x6aeb92C9E554B8642D51f0C94e71A2Ed72533463",
     "deploy-bsc-main": "npx hardhat run scripts/deploy.ts --network bsc",
-    "verify-bsc-main-contract": "npx hardhat verify 0xE29142E14E52bdFBb8108076f66f49661F10EC10 --network bsc"
+    "verify-bsc-main-contract": "npx hardhat verify 0xE29142E14E52bdFBb8108076f66f49661F10EC10 --network bsc",
+    "deploy-bsc-main-burn": "npx hardhat run scripts/deploy-burn.ts --network bsc",
+    "verify-bsc-main-burn-contract": "npx hardhat verify --network bsc 0x4b5c7F50BDc71Ec882e28A7F0cD04B78192F59ef 0xE29142E14E52bdFBb8108076f66f49661F10EC10"
   },
   "author": "",
   "license": "MIT",
@@ -21,6 +26,7 @@
     "@openzeppelin/contracts-upgradeable": "^4.9.3",
     "@openzeppelin/hardhat-upgrades": "^2.1.1",
     "dotenv": "^16.3.1",
-    "hardhat": "^2.17.1"
+    "hardhat": "^2.17.1",
+    "xlsx": "^0.18.5"
   }
 }

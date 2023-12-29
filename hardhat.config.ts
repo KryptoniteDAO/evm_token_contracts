@@ -10,17 +10,18 @@ dotenv.config();
 const config: HardhatUserConfig = {
     solidity: {
         version: "0.8.19",
-        settings: {optimizer: {enabled: true, runs: 200}}
+        settings: {optimizer: {enabled: true, runs: 200}},
     },
     networks: {
         bsc: {
-            url: "https://bsc.publicnode.com",
+            url: "https://bsc-pokt.nodies.app",
             accounts: [process.env.PRIVATE_KEY || ''],
         },
         bsc_testnet: {
             url: "https://bsc-testnet.publicnode.com/",
             accounts: [process.env.PRIVATE_KEY || ''],
-        }
+
+        },
     },
     etherscan: {
         apiKey: {
